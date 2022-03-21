@@ -14,7 +14,7 @@
     --sidebar-color: #fff;
     --primary-color: #6b48ff;
     --primary-color-light: #f6f5ff;
-    --toggle-color: #000;
+    --toggle-color: #ddd;
     --text-color: #707070;
 
     /*=== Transições ===*/
@@ -176,4 +176,33 @@ header .image-text .header-text{
 
 .menu-bar .mode i.sun{
     opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+}
+
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    cursor: pointer;
 }
