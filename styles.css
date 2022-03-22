@@ -30,17 +30,6 @@ body{
     transition: var(--trans-02);
 }
 
-body.dark{
-    /* === Cores ===*/
-    --body-color: #18191A;
-    --sidebar-color: #242526;
-    --primary-color: #3A383C;
-    --primary-color-light: #3A383C;
-    --toggle-color: #FFF;
-    --text-color: #CCC;
-
-}
-
 /* === CSS Geral (Reutilizável) === */
 .sidebar .text{
     font-size: 16px;
@@ -76,8 +65,9 @@ body.dark{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--trans-05);
-    -webkit-box-shadow: 3px 0px 10px 1px #A3A3A3; 
-    box-shadow: 2px 0px 5px 1px #A3A3A3;
+    -webkit-box-shadow: 1px 0px 10px 1px #e6e6e6; 
+    box-shadow: 1px 0px 10px 1px #e6e6e6;
+    z-index: 100;
 }
 
 .sidebar.close{
@@ -112,8 +102,8 @@ header .image-text .header-text{
 .sidebar header .toggle{
     position: absolute;
     top: 50%;
-    right: -25px;
-    transform: translateY(-50%);
+    right: -50px;
+    transform: translate(-50%) rotate(180deg);
     height: 30px;
     width: 30px;
     background-color: var(--primary-color);
@@ -123,6 +113,15 @@ header .image-text .header-text{
     border-radius: 50%;
     color: var(--sidebar-color);
     font-size: 22px;
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+    right: -25px;
 }
 
 .sidebar li{
@@ -150,6 +149,7 @@ header .image-text .header-text{
 .sidebar .search-box{
     background-color: var(--primary-color-light);
     border-radius: 6px;
+    transition: var(--trans-03);
 }
 
 .search-box input{
@@ -180,6 +180,11 @@ header .image-text .header-text{
     color: var(--sidebar-color);
 }
 
+.sidebar li input:hover {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
+
 .sidebar .menu-bar{
     height: calc(100% - 50px); /*Retirado do valor dos 100% o tamanho do input de pesquisa*/
     display: flex;
@@ -193,19 +198,9 @@ header .image-text .header-text{
     border-radius: 6px;
 }
 
-.menu-bar .mode .moon-sun{
-    height: 50px;
-    width: 60px;
-    display: flex;
-    align-items: center;
-}
-
 .menu-bar .mode i{
     position: absolute;
-}
-
-.menu-bar .mode i.sun{
-    opacity: 0;
+    transition: var(--trans-03);
 }
 
 .menu-bar .mode .toggle-switch{
@@ -240,6 +235,17 @@ header .image-text .header-text{
     transition: var(--trans-03);
 }
 
-body.dark .switch::before{
-    left: 25px;
+.home{
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px;
+    transition: var(--trans-05);
+}
+
+
+.sidebar.close ~ .home{
+    left: 88px;
+    width: calc(100% - 88px);
 }

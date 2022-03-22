@@ -1,0 +1,178 @@
+/* Importação da fonte do Google*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* === Cores ===*/
+    --body-color: #f2f4f6;
+    --sidebar-color: #fff;
+    --primary-color: #6b48ff;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+
+    /*=== Transições ===*/
+    --trans-02: all 0.2s ease;
+    --trans-03: all 0.3s ease;
+    --trans-04: all 0.4s ease;
+    --trans-05: all 0.5s ease;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.container{
+    max-width: 850px;
+    width: 100%;
+    max-height: 450px;
+    height: 100%;
+    background: var(--body-color);
+    display: flex;
+    border-radius: 15px;
+}
+
+.form{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form form{
+    max-width: 300px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+}
+
+.form form .login-form .title{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form form .login-form .title:before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+}
+
+.form form .login-form .input-boxes{
+    margin-top: 30px;
+}
+
+.form form .login-form .input-boxes .input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.form form .login-form .input-boxes .input-box i{
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.form form .login-form .input-boxes .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: var(--body-color);
+    border-bottom: 2px solid var(--toggle-color);
+    transition: all 0.3s ease;
+}
+
+.form form .login-form .input-boxes .input-box input:focus,
+.form form .login-form .input-boxes .input-box input:valid{
+    border-color: var(--primary-color);
+}
+
+.form form .login-form .input-boxes .button{
+    margin-top: 30px;
+}
+
+.form form .login-form .input-boxes .button input{
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 6px;
+}
+
+.form form .login-form .input-boxes .button input:hover{
+    background-color: #fff;
+    color:var(--primary-color);
+    border: 1px solid var(--primary-color);
+    
+}
+
+.imagem{
+    background: linear-gradient(to right, rgba(107, 72, 255, 0.6) 20%,
+              rgba(141, 141, 141, 0.9)), url(img/cartaoLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem h2{
+    color: var(--primary-color-light);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 730px) {
+    .imagem{
+        display: none;
+    }
+
+    .container{
+        min-width: 300px;
+        width: 80%;
+        max-height: 400px;
+    }
+}
+
+@media (min-width: 300px) AND (max-width: 450px) {
+    .imagem{
+        display: none;
+    }
+
+    .container{
+        min-width: 200px;
+        width: 80%;
+        max-height: 400px;
+        padding: 15px;
+    }
+
+    /* .form form .login-form .title{
+        position: relative;
+        font-size: 1.5 rem;
+        font-weight: 500;
+        color: var(--text-color);
+    } */
+}
